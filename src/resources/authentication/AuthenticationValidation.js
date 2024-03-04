@@ -1,6 +1,6 @@
 import expressValidator from 'express-validator';
 
-const { body, validationResult } = expressValidator;
+const { body } = expressValidator;
 
 const postAuthValidationRules = () => {
   return [
