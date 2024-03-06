@@ -1,4 +1,4 @@
-import Emaill from '../../config/email';
+import Emaill from '../../config/email.js';
 
 const sendAccountActivation = async (email, token) => {
   await Emaill.transporter.sendMail({

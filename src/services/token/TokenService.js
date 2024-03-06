@@ -1,5 +1,5 @@
-import generator from '../../shared/generator';
-import Token from './Token';
+import generator from '../../shared/generator.js';
+import Token from './Token.js';
 
 const createToken = async (userPointer) => {
   const token = generator.randomString(32);

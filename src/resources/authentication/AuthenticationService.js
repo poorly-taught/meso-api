@@ -1,4 +1,4 @@
-import User from '../../resources/user/User';
+import User from '../../resources/user/User.js';
 import bcrypt from 'bcrypt';
 import TokenService from '../../services/token/TokenService.js';
 import AuthenticationException from '../../exceptions/AuthenticationException.js';

@@ -1,6 +1,7 @@
 import express from 'express';
 import AuthenticationService from './AuthenticationService.js';
-import { postAuthValidationRules, validate } from './AuthenticationValidation.js';
+import { postAuthValidationRules } from './AuthenticationValidation.js';
+import validate from '../../shared/validate.js';
 import TokenAuthentication from '../../middleware/TokenAuthentication.js';
 
 const router = express.Router();

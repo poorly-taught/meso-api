@@ -1,12 +1,14 @@
-import mongoose from 'mongoose';
-import config from 'config';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const database = config.get('database');
-const { url, dbName } = database;
+import mongoose from 'mongoose';
+
+const DB_URL = process.env.DB_URL || '';
+const DB_NAME = process.env.DB_NAME || '';
 
 const initializeDb = async () => {
   try {
-    await mongoose.connect(`${url}/${dbName}`);
+    await mongoose.connect(`${DB_URL}/${DB_NAME}`);
     // console.log(`Successfully connected to ${url}/${dbName}`);
   } catch (error) {
     console.error(error);

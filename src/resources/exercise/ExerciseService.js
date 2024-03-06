@@ -1,4 +1,4 @@
-import Exercise from './Exercise';
+import Exercise from './Exercise.js';
 
 const getExercises = async (pagination, filter, query) => {
   const { page, limit } = pagination;

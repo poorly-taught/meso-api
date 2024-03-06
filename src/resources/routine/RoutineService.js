@@ -1,4 +1,4 @@
-import Routine from './Routine';
+import Routine from './Routine.js';
 
 const getRoutines = async (pagination, filter, query, userPointer) => {
   // TODO: actually implement pagination

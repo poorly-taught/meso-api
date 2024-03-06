@@ -1,6 +1,6 @@
 import express from 'express';
-import TokenAuthentication from '../../middleware/TokenAuthentication';
-import ExerciseService from './ExerciseService';
+import TokenAuthentication from '../../middleware/TokenAuthentication.js';
+import ExerciseService from './ExerciseService.js';
 
 const router = express.Router();
 

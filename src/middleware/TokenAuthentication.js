@@ -1,5 +1,5 @@
-import AuthenticationException from '../exceptions/AuthenticationException';
-import TokenService from '../services/token/TokenService';
+import AuthenticationException from '../exceptions/AuthenticationException.js';
+import TokenService from '../services/token/TokenService.js';
 
 export default function (request, response, next) {
   const authorization = request.headers.authorization;

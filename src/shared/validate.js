@@ -2,7 +2,7 @@ import expressValidator from 'express-validator';
 
 const { validationResult } = expressValidator;
 
-export default (request, response, next) => {
+export default () => (request, response, next) => {
   const errors = validationResult(request);
   if (errors.isEmpty()) {
     return next({});

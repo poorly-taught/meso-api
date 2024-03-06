@@ -1,7 +1,8 @@
 import express from 'express';
-import TokenAuthentication from '../../middleware/TokenAuthentication';
-import RoutineService from './RoutineService';
-import { postRoutineValidationRules, validate } from './RoutineValidation';
+import TokenAuthentication from '../../middleware/TokenAuthentication.js';
+import RoutineService from './RoutineService.js';
+import { postRoutineValidationRules } from './RoutineValidation.js';
+import validate from '../../shared/validate.js';
 
 const router = express.Router();
 router.use(TokenAuthentication);
