@@ -9,7 +9,6 @@ const postRoutineValidationRules = () => {
       .notEmpty()
       .withMessage('Exercises cannot be null.')
       .bail()
-      .bail()
       .custom(async (exercises) => {
         const [exercise] = exercises;
         const [reps] = exercise.sets;
