@@ -9,8 +9,9 @@ const DB_NAME = process.env.DB_NAME || '';
 const initializeDb = async () => {
   try {
     await mongoose.connect(`${DB_URL}/${DB_NAME}`);
-    // console.log(`Successfully connected to ${url}/${dbName}`);
+    console.log(`Successfully connected to ${DB_URL}/${DB_NAME}`);
   } catch (error) {
+    console.log(`Unable to connect to ${DB_URL}/${DB_NAME}`);
     console.error(error);
   }
 };
