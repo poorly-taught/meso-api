@@ -4,14 +4,15 @@ dotenv.config();
 import mongoose from 'mongoose';
 
 const DB_URL = process.env.DB_URL || '';
-const DB_NAME = process.env.DB_NAME || '';
+const DB_USERNAME = process.env.DB_USERNAME || '';
+const DB_PW = process.env.DB_PW || '';
 
 const initializeDb = async () => {
   try {
-    await mongoose.connect(`${DB_URL}/${DB_NAME}`);
-    console.log(`Successfully connected to ${DB_URL}/${DB_NAME}`);
+    await mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PW}@${DB_URL}`);
+    console.log(`Successfully connected to ${DB_URL}`);
   } catch (error) {
-    console.log(`Unable to connect to ${DB_URL}/${DB_NAME}`);
+    console.log(`Unable to connect to ${DB_URL}`);
     console.error(error);
   }
 };
