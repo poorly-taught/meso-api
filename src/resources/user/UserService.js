@@ -1,8 +1,8 @@
 import User from './User.js';
 import bcrypt from 'bcrypt';
 import generator from '../../shared/generator.js';
-import EmailService from '../../services/email/EmailService.js';
-import EmailException from '../../exceptions/EmailException.js';
+// import EmailService from '../../services/email/EmailService.js';
+// import EmailException from '../../exceptions/EmailException.js';
 import UserException from '../../exceptions/UserException.js';
 import InvalidTokenException from '../../exceptions/InvalidTokenException.js';
 
@@ -24,11 +24,11 @@ const save = async (body) => {
     throw new UserException();
   }
 
-  try {
-    await EmailService.sendAccountActivation(body.email, activationToken);
-  } catch (error) {
-    throw new EmailException();
-  }
+  // try {
+  //   await EmailService.sendAccountActivation(body.email, activationToken);
+  // } catch (error) {
+  //   throw new EmailException();
+  // }
 
   try {
     await user.save();
