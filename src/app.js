@@ -22,6 +22,11 @@ app.use(
   })
 );
 
+app.use((request, response, next) => {
+  console.log(request.method, request.path);
+  next();
+});
+
 app.use(userRouter);
 app.use(authenticationRouter);
 app.use(exerciseRouter);
