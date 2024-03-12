@@ -1,14 +1,21 @@
 import generator from '../../shared/generator.js';
 import Token from './Token.js';
 
-const createToken = async (userPointer) => {
-  const token = generator.randomString(32);
-  await Token.create({
-    token,
-    userPointer
-  });
+const getToken = async (userPointer) => {
+  const tokens = await Token.find({ userPointer });
+  if (tokens.length === 0) {
+    const token = generator.randomString(32);
+    await Token.create({
+      token,
+      userPointer
+    });
 
-  return token;
+    return { token };
+  }
+
+  return {
+    token: tokens[0].token
+  };
 };
 
 const verifyToken = async (token) => {
@@ -31,7 +38,7 @@ const removeToken = async (userPointer) => {
 };
 
 export default {
-  createToken,
+  getToken,
   verifyToken,
   removeToken
 };

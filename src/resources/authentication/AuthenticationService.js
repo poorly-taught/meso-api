@@ -10,8 +10,12 @@ const login = async (body) => {
     const hash = user.password;
     const match = await bcrypt.compare(password, hash);
     if (match) {
-      const token = await TokenService.createToken(user.pointer);
+      const token = await TokenService.getToken(user.pointer);
       return { token };
+    }
+
+    if (!match) {
+      throw new Error();
     }
   } catch (error) {
     throw new AuthenticationException();

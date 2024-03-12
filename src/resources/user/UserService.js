@@ -18,7 +18,8 @@ const save = async (body) => {
     user = new User({
       ...body,
       password,
-      activationToken
+      activationToken,
+      createdAt: new Date()
     });
   } catch (error) {
     throw new UserException();

@@ -12,7 +12,8 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   inactive: { type: Boolean, default: true },
-  activationToken: String
+  activationToken: String,
+  createdAt: Date
 });
 
 const User = mongoose.model('User', userSchema);
