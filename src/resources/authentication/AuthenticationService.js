@@ -11,7 +11,7 @@ const login = async (body) => {
     const match = await bcrypt.compare(password, hash);
     if (match) {
       const token = await TokenService.getToken(user.pointer);
-      return { token };
+      return token;
     }
 
     if (!match) {
