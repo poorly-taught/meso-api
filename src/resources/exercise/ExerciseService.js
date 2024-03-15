@@ -1,7 +1,7 @@
 import Exercise from './Exercise.js';
 
 const getExercises = async (pagination, filter, query) => {
-  const { page, limit } = pagination;
+  const { page = 1, limit = 50 } = pagination;
   const skip = (page - 1) * limit;
 
   if (filter && query) {
